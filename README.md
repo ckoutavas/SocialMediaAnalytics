@@ -13,12 +13,12 @@ fb = meta.fb_published_post(metrics=['created_time', 'permalink_url',
                             limit=10)
 ```
 
-You can create a `pandas.DataFrame` from the above dict by doing something like
+You can create a `pandas.DataFrame` from the above dict by doing something like:
 ```
-data = {list(data.keys())[0]: pd.json_normalize(data[list(data.keys())[0]]['published_posts']['data'])
-        for data in fb}
+fb_dfs = {list(data.keys())[0]: pd.json_normalize(data[list(data.keys())[0]]['published_posts']['data'])
+          for data in fb}
 # access each Facebook page's DataFrame by calling the name of the page
-print(data['Facebook Page Name'])
+print(fb_dfs['Facebook Page Name'])
 ```
 
 ## ig_media
@@ -30,4 +30,9 @@ meta = SocialMedia.Meta(user_token='your_meta_access_token')
 ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
                    since='2023-03-01',
                    limit=10)
+```
+You can create a `pandas.DataFrame` from the above dict by doing something like:
+```
+ig_dfs = {list(data.keys())[0]: pd.DataFrame(data[list(data.keys())[0]]['data']) for data in ig}
+print(ig_dfs['Instagram Page Name'])
 ```
