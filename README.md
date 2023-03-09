@@ -1,7 +1,43 @@
 # SocialMediaAnalytics
 A python API wrapper for the Meta Graph API to pull social media post analytics over time for your connected Facebook and Instagram business accounts
 ## fb_published_post
-If you use the metric `likes.summary(total_count)` note that "total_count represents the approximate number of nodes on the likes edge. The actual number of results returned might be different depending on privacy settings."
+### published_posts endpoint field values to be used with the `metrics` param
+Note that this is not a full list of fileds for the published_posts endpoint.
+
+If you use `likes.summary(total_count)` note that "total_count represents the approximate number of nodes on the likes edge. The actual number of results returned might be different depending on privacy settings."
+
+- actions
+- admin_creator
+- comments{}
+  - message
+  - name
+  - username
+- created_time
+- from
+- full_picture
+- is_eligible_for_promotion
+- instagram_eligibility
+- id
+- is_expired
+- is_hidden
+- is_inline_created
+- is_instagram_eligible
+- is_popular
+- is_published
+- likes.summary(total_count)
+- message
+- message_tags
+- permalink_url
+- reactions{}
+  - username
+  - type
+- likes{}
+  - name
+  - username
+- likes.summary(total_count)
+
+### fb.published_post example
+
 ```
 from SocialMediaAnalytics import SocialMedia
 
@@ -12,7 +48,6 @@ fb = meta.fb_published_post(metrics=['created_time', 'permalink_url',
                             since='2023-03-01',
                             limit=10)
 ```
-
 You can create a `pandas.DataFrame` from the above dict by doing something like:
 ```
 fb_dfs = {list(data.keys())[0]: pd.json_normalize(data[list(data.keys())[0]]['published_posts']['data'])
@@ -22,16 +57,8 @@ print(fb_dfs['Facebook Page Name'])
 ```
 
 ## ig_media
-```
-from SocialMediaAnalytics import SocialMedia
-
-
-meta = SocialMedia.Meta(user_token='your_meta_access_token')
-ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
-                   since='2023-03-01',
-                   limit=10)
-```
-### Media endpoint field values used with the `metrics` param
+### Media endpoint field values to be used with the `metrics` param
+Note that this is not a full list of fileds for the published_posts endpoint.
 - caption
 - comments{}
   - text
@@ -60,7 +87,16 @@ ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
 - timestamp
 - username
 
-### Create a pandas.DataFrame
+### ig.media example
+```
+from SocialMediaAnalytics import SocialMedia
+
+
+meta = SocialMedia.Meta(user_token='your_meta_access_token')
+ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
+                   since='2023-03-01',
+                   limit=10)
+```
 You can create a `pandas.DataFrame` from the above dict by doing something like:
 ```
 ig_dfs = {list(data.keys())[0]: pd.DataFrame(data[list(data.keys())[0]]['data']) for data in ig}
