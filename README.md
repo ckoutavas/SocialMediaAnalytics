@@ -1,6 +1,6 @@
 # SocialMediaAnalytics
 A python API wrapper for the Meta Graph API to pull social media post analytics over time for your connected Facebook and Instagram business accounts
-## fb_published_post
+## fb_published_posts
 ### published_posts endpoint field values to be used with the `metrics` param
 Note that this is not a full list of fileds for the published_posts endpoint.
 
@@ -36,7 +36,7 @@ If you use `likes.summary(total_count)` note that "total_count represents the ap
   - username
 - likes.summary(total_count)
 
-### fb.published_post example
+### fb.published_posts example
 
 ```
 from SocialMediaAnalytics import SocialMedia
