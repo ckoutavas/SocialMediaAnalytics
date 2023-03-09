@@ -31,9 +31,29 @@ ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
                    since='2023-03-01',
                    limit=10)
 ```
+### Media endpoint field values used with the `metrics` param
+- caption
+- comments_count
+- id
+- ig_id
+- is_comment_enabled
+- is_shared_to_feed
+- like_count
+- media_product_type
+- media_type
+- media_url
+- owner
+- permalink
+- shortcode
+- thumbnail_url
+- timestamp
+- username
+
+### Create a pandas.DataFrame
 You can create a `pandas.DataFrame` from the above dict by doing something like:
 ```
 ig_dfs = {list(data.keys())[0]: pd.DataFrame(data[list(data.keys())[0]]['data']) for data in ig}
 # access each Instagram page's DataFrame by calling the name of the page
 print(ig_dfs['Instagram Page Name'])
 ```
+
