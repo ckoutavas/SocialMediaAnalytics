@@ -6,7 +6,8 @@ from SocialMediaAnalytics import SocialMedia
 
 
 meta = SocialMedia.Meta(user_token='your_meta_access_token')
-fb = meta.fb_published_post(metrics=['created_time', 'permalink_url', 'message', 'likes.summary(total_count)'],
+fb = meta.fb_published_post(metrics=['created_time', 'permalink_url',
+                                     'message', 'likes.summary(total_count)'],
                             since='2023-03-01',
                             limit=10)
 ```
