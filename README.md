@@ -1,5 +1,5 @@
 # SocialMediaAnalytics
-A python API wrapper to gather social media post analytics over time for your connected Facebook and Instagram business accounts
+A python API wrapper for the Meta Graph API to pull social media post analytics over time for your connected Facebook and Instagram business accounts
 ## fb_published_post
 If you use the metric `likes.summary(total_count)` note that "total_count represents the approximate number of nodes on the likes edge. The actual number of results returned might be different depending on privacy settings."
 ```
