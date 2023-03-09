@@ -22,7 +22,7 @@ class Meta:
         self.page_tokens = {data['name']: {'id': data['id'], 'token': data['access_token']}
                             for data in page_data['accounts']['data']}
 
-    def fb_published_post(self, metrics: List[Union[Any, str]], limit: int, **kwargs) -> List[Union[Any, dict]]:
+    def fb_published_posts(self, metrics: List[Union[Any, str]], limit: int, **kwargs) -> List[Union[Any, dict]]:
         """
         Pulls data from published_posts
 
