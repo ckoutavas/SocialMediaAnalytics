@@ -93,7 +93,7 @@ class Meta:
         :param metrics: list of fields for media:
                         ['timestamp', 'media_url', 'caption', 'like_count']
         :param since: str date in yyyy-mm-dd format to pull data from this date forward
-        :param limit: int max number of records to return for each busness account
+        :param limit: int max number of records to return for each business account
         :return: list of dicts
         """
         since = datetime.datetime.strptime(since, '%Y-%m-%d').date().strftime('%s')
