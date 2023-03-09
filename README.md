@@ -33,6 +33,17 @@ ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
 ```
 ### Media endpoint field values used with the `metrics` param
 - caption
+- comments{}
+  - text
+  - like_count
+  - from
+  - hidden
+  - id
+  - media
+  - parent_id
+  - timestamp
+  - user
+  - username
 - comments_count
 - id
 - ig_id
