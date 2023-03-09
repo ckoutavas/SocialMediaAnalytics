@@ -13,6 +13,14 @@ fb = meta.fb_published_post(metrics=['created_time', 'permalink_url',
                             limit=10)
 ```
 
+You can create a `pandas.DataFrame` from the above dict by doing something like
+```
+data = {list(data.keys())[0]: pd.json_normalize(data[list(data.keys())[0]]['published_posts']['data'])
+        for data in fb}
+# access each Facebook page's DataFrame by calling the name of the page
+print(data['Facebook Page Name'])
+```
+
 ## ig_media
 ```
 from SocialMediaAnalytics import SocialMedia
