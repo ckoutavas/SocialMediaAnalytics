@@ -27,7 +27,6 @@ from SocialMediaAnalytics import SocialMedia
 
 
 meta = SocialMedia.Meta(user_token='your_meta_access_token')
-# access each Instagram page's DataFrame by calling the name of the page
 ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
                    since='2023-03-01',
                    limit=10)
@@ -35,5 +34,6 @@ ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
 You can create a `pandas.DataFrame` from the above dict by doing something like:
 ```
 ig_dfs = {list(data.keys())[0]: pd.DataFrame(data[list(data.keys())[0]]['data']) for data in ig}
+# access each Instagram page's DataFrame by calling the name of the page
 print(ig_dfs['Instagram Page Name'])
 ```
