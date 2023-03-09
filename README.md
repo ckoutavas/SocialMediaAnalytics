@@ -27,6 +27,7 @@ from SocialMediaAnalytics import SocialMedia
 
 
 meta = SocialMedia.Meta(user_token='your_meta_access_token')
+# access each Instagram page's DataFrame by calling the name of the page
 ig = meta.ig_media(metrics=['timestamp', 'media_url', 'caption', 'like_count'],
                    since='2023-03-01',
                    limit=10)
