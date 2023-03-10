@@ -58,7 +58,7 @@ print(fb_dfs['Facebook Page Name'])
 
 ## ig_media
 ### Media endpoint field values to be used with the `metrics` param
-Note that this is not a full list of fileds for the published_posts endpoint.
+Note that this is not a full list of fileds for the ig_media endpoint.
 - caption
 - comments{}
   - text
