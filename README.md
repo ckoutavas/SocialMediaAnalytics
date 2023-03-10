@@ -87,7 +87,7 @@ Note that this is not a full list of fileds for the published_posts endpoint.
 - timestamp
 - username
 
-### ig.media example
+### ig_media example
 ```
 from SocialMediaAnalytics import SocialMedia
 
